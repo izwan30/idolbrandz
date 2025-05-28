@@ -1,0 +1,193 @@
+---
+const testimonials = [
+  {
+    id: 1,
+    name: "Azman Abdullah",
+    company: "Tech Solutions Sdn Bhd",
+    image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    quote: "Idolbrandz membantu perniagaan kami meningkatkan jualan sebanyak 45% dalam tempoh 3 bulan melalui strategi media sosial mereka yang efektif. Pasukan mereka sangat profesional dan responsif terhadap keperluan kami."
+  },
+  {
+    id: 2,
+    name: "Sarah Tan",
+    company: "BeautyGlow Malaysia",
+    image: "https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    quote: "Sebelum bekerjasama dengan Idolbrandz, kehadiran dalam talian kami sangat lemah. Kini, kami mempunyai jenama yang kukuh dan penglibatan pelanggan yang tinggi di semua platform media sosial. Terima kasih Idolbrandz!"
+  },
+  {
+    id: 3,
+    name: "Hafiz Rahman",
+    company: "Food Delight Restaurant",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    quote: "Kempen iklan Facebook yang diuruskan oleh Idolbrandz telah meningkatkan trafik ke restoran kami sebanyak 60%. ROI yang luar biasa dan khidmat pelanggan yang cemerlang. Sangat disyorkan!"
+  },
+  {
+    id: 4,
+    name: "Nurul Huda",
+    company: "Modest Fashion House",
+    image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    quote: "Kami sangat berpuas hati dengan pengurusan media sosial oleh Idolbrandz. Kandungan berkualiti tinggi dan strategi yang tepat telah membantu perniagaan kami mencapai pelanggan sasaran dengan lebih efektif."
+  }
+];
+
+const clients = [
+  "Company A", "Company B", "Company C", "Company D", "Company E", "Company F"
+];
+---
+
+<section id="testimonials" class="py-20 bg-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-inter font-bold text-gray-900">Apa Kata Pelanggan Kami</h2>
+      <div class="w-20 h-1 bg-primary-600 mx-auto mt-4 mb-6"></div>
+      <p class="max-w-2xl mx-auto text-gray-600">
+        Kejayaan pelanggan kami adalah kejayaan kami. Lihat apa yang mereka katakan tentang perkhidmatan kami.
+      </p>
+    </div>
+    
+    <!-- Testimonials Carousel -->
+    <div class="relative animate-on-scroll fade-in">
+      <div class="testimonial-carousel overflow-hidden">
+        <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
+          {testimonials.map((testimonial) => (
+            <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+              <div class="bg-gray-50 rounded-lg p-6 shadow-md h-full flex flex-col">
+                <div class="flex items-center mb-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    class="w-16 h-16 rounded-full object-cover mr-4"
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                  />
+                  <div>
+                    <h3 class="font-semibold text-gray-900">{testimonial.name}</h3>
+                    <p class="text-sm text-gray-600">{testimonial.company}</p>
+                  </div>
+                </div>
+                <div class="mb-4 text-primary-600">
+                  <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118l-2.8-2.034c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-gray-700 italic flex-grow">{testimonial.quote}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md focus:outline-none z-10 prev-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md focus:outline-none z-10 next-button">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Client Logos -->
+    <div class="mt-16 animate-on-scroll fade-in">
+      <h3 class="text-xl font-inter font-semibold text-center mb-10">Dipercayai Oleh</h3>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        {[1, 2, 3, 4, 5, 6].map((index) => (
+          <div class="grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+            <img 
+              src="https://static.vecteezy.com/system/resources/previews/016/716/480/original/whatsapp-icon-free-png.png" 
+              alt="WhatsApp Logo" 
+              class="h-12 w-12 object-contain"
+              width="48"
+              height="48"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.testimonial-track');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const nextButton = document.querySelector('.next-button');
+    const prevButton = document.querySelector('.prev-button');
+    
+    if (!track || !slides.length || !nextButton || !prevButton) return;
+    
+    let currentIndex = 0;
+    const slideWidth = 100; // percentage
+    const totalSlides = slides.length;
+    let slidesToShow = 1;
+    
+    const updateSlidesToShow = () => {
+      if (window.innerWidth >= 1024) {
+        slidesToShow = 3;
+      } else if (window.innerWidth >= 768) {
+        slidesToShow = 2;
+      } else {
+        slidesToShow = 1;
+      }
+    };
+    
+    const updateSlidePosition = () => {
+      if (!track) return;
+      const offset = -currentIndex * (slideWidth / slidesToShow);
+      track.style.transform = `translateX(${offset}%)`;
+    };
+    
+    const nextSlide = () => {
+      const maxIndex = totalSlides - slidesToShow;
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      updateSlidePosition();
+    };
+    
+    const prevSlide = () => {
+      const maxIndex = totalSlides - slidesToShow;
+      currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+      updateSlidePosition();
+    };
+    
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+    
+    window.addEventListener('resize', () => {
+      updateSlidesToShow();
+      updateSlidePosition();
+    });
+    
+    // Initialize
+    updateSlidesToShow();
+    updateSlidePosition();
+    
+    // Auto slide
+    setInterval(nextSlide, 5000);
+  });
+</script>
+
+<style>
+  .testimonial-carousel {
+    position: relative;
+    width: 100%;
+  }
+</style>

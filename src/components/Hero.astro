@@ -1,0 +1,110 @@
+---
+---
+
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat" aria-hidden="true"></div>
+  
+  <!-- Content -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-inter font-bold text-white leading-tight animate-fade-in">
+        Pakar Digital Marketing Untuk Perniagaan Anda
+      </h1>
+      
+      <p class="mt-6 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+        Tingkatkan jenama anda dengan strategi pemasaran digital yang efektif. Kami membantu perniagaan anda berkembang dalam dunia digital.
+      </p>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10 md:mt-16 animate-slide-up" style="animation-delay: 0.4s;">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl md:text-4xl font-bold text-white counter">5+</div>
+          <div class="text-gray-300 mt-2">Tahun Pengalaman</div>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl md:text-4xl font-bold text-white counter">100+</div>
+          <div class="text-gray-300 mt-2">Projek Berjaya</div>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl md:text-4xl font-bold text-white counter">50+</div>
+          <div class="text-gray-300 mt-2">Klien Aktif</div>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl md:text-4xl font-bold text-white counter">98%</div>
+          <div class="text-gray-300 mt-2">Kadar Kepuasan</div>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="mt-10 md:mt-16 animate-slide-up" style="animation-delay: 0.6s;">
+        <a 
+          href="https://wa.me/601156445338" 
+          class="inline-block bg-secondary-500 hover:bg-secondary-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hubungi Kami Sekarang
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <a href="#about" class="flex flex-col items-center text-sm">
+      <span class="mb-2">Skrol Ke Bawah</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<script>
+  // Counter animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const countTo = parseInt(entry.target.innerText.replace(/\D/g, ''));
+          let count = 0;
+          const duration = 2000; // ms
+          const increment = Math.ceil(countTo / (duration / 16)); // 60fps
+          
+          const timer = setInterval(() => {
+            count += increment;
+            if (count >= countTo) {
+              entry.target.innerText = entry.target.innerText.includes('+') 
+                ? countTo + '+' 
+                : entry.target.innerText.includes('%')
+                  ? countTo + '%'
+                  : countTo;
+              clearInterval(timer);
+            } else {
+              entry.target.innerText = entry.target.innerText.includes('+') 
+                ? count + '+' 
+                : entry.target.innerText.includes('%')
+                  ? count + '%'
+                  : count;
+            }
+          }, 16);
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+</script>

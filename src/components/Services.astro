@@ -1,0 +1,111 @@
+---
+const services = [
+  {
+    title: "Pengurusan Media Sosial",
+    description: "Kami uruskan akaun media sosial perniagaan anda secara profesional dengan kandungan berkualiti tinggi dan strategi penglibatan yang efektif.",
+    icon: "social-media",
+    link: "#contact"
+  },
+  {
+    title: "Iklan Berbayar",
+    description: "Tingkatkan jangkauan dan jualan dengan kempen iklan berbayar yang dioptimumkan untuk Facebook, Instagram, Google, dan platform lain.",
+    icon: "paid-ads",
+    link: "#contact"
+  },
+  {
+    title: "Pembangunan Jenama",
+    description: "Bina identiti jenama yang kukuh dengan strategi visual dan mesej yang konsisten merentasi semua saluran pemasaran.",
+    icon: "branding",
+    link: "#contact"
+  },
+  {
+    title: "Pengoptimuman SEO",
+    description: "Tingkatkan kedudukan laman web anda di mesin carian untuk mendapatkan lebih banyak trafik organik dan pelanggan berpotensi.",
+    icon: "seo",
+    link: "#contact"
+  },
+  {
+    title: "Kelas & Latihan",
+    description: "Tingkatkan kemahiran pemasaran digital pasukan anda melalui kursus dan bengkel yang direka khas mengikut keperluan perniagaan anda.",
+    icon: "training",
+    link: "#contact"
+  },
+  {
+    title: "E-Book & Buku Fizikal",
+    description: "Dapatkan panduan dan sumber pembelajaran tentang pemasaran digital melalui penerbitan kami yang komprehensif.",
+    icon: "ebook",
+    link: "#contact"
+  },
+  {
+    title: "Pengurusan Reputasi",
+    description: "Pantau dan uruskan imej dalam talian perniagaan anda untuk membina kepercayaan pelanggan dan pengiktirafan jenama.",
+    icon: "reputation",
+    link: "#contact"
+  },
+  {
+    title: "Pengurusan Kandungan",
+    description: "Cipta kandungan menarik yang menggambarkan nilai jenama anda dan menarik perhatian pelanggan sasaran anda.",
+    icon: "content",
+    link: "#contact"
+  }
+];
+
+// Icon components based on the service type
+const getIcon = (iconType) => {
+  switch(iconType) {
+    case 'social-media':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>`;
+    case 'paid-ads':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" /></svg>`;
+    case 'branding':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>`;
+    case 'seo':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`;
+    case 'training':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>`;
+    case 'ebook':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`;
+    case 'reputation':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>`;
+    case 'content':
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>`;
+    default:
+      return `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`;
+  }
+};
+---
+
+<section id="services" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-inter font-bold text-gray-900">Perkhidmatan Kami</h2>
+      <div class="w-20 h-1 bg-primary-600 mx-auto mt-4 mb-6"></div>
+      <p class="max-w-2xl mx-auto text-gray-600">
+        Kami menawarkan pelbagai perkhidmatan pemasaran digital untuk membantu perniagaan anda berkembang dalam dunia digital.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service, index) => (
+        <div class="bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-on-scroll fade-in" style={`animation-delay: ${index * 0.1}s`}>
+          <div class="p-6">
+            <div class="text-primary-600 mb-4">
+              <Fragment set:html={getIcon(service.icon)} />
+            </div>
+            <h3 class="text-xl font-inter font-semibold mb-3 text-gray-900">{service.title}</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">{service.description}</p>
+            <a 
+              href={service.link} 
+              class="inline-flex items-center text-primary-600 hover:text-primary-800 transition-colors font-medium"
+            >
+              Ketahui Lebih Lanjut
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
